@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nzube Ikoroha | Web Developer | Work</title>
+    <meta name="keywords" content="software developer in lagos state, software developer in imo state, software developer in enugu state, software developer in abia state, Nzube Ikoroha, python developer in lagos, python developer, flask developer, fullstack developer in Nigeria, javascript , html5, css3, jquery, reactjs, mysql, front-end developer in lagos, back-end developer, website designer, website design in lagos, web development" >
+    <meta name="description" content="Nzube Ikoroha is a professional web developer who use technology to solve real-world problems to meet client needs" >
+    <meta name="Author" content="Nzube Ikoroha" > 
+
+    <!--Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Inconsolata:400,700">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    {#
+    {{ url_for('static', filename='') }}
+    style="background-image: url(img/parallex.jpg)"
+    #}
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}" id="theme-color">
+</head>
+<body data-spy="scroll" data-target="#beleme-navbar" data-offset="0">
+    <!--hero header-->
+    <section class="bg-hero py-7 py-md-0" id="home" style="background-image: url({{ url_for('static', filename='img/parallex.jpg') }})">
+        <div class="container">
+            <div class="row vh-md-100">
+                <div class="col-md-8 mx-auto my-auto text-white text-center">
+                    <img src="{{ url_for('static', filename='img/face.jpeg') }}" class="img-fluid rounded-circle img-profile" alt="User" />
+                    <h1 class="my-4">Hi, I'm Nzube Ikoroha.</h1>
+                    <p class="lead mb-5 font-weight-bold">
+                        An Experienced
+                        <span class="typist" data-typist="Web Developer, Web Designer, Graphic Designer, Entrepreneur, Accountant">Web Developer</span>
+                    </p>
+                    <a href="#about" class="btn btn-primary d-inline-flex flex-row align-items-center page-scroll">
+                        Know Me Better
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--navigation-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top sticky-navigation" id="beleme-navbar">
+        <a class="navbar-brand d-md-none" href="{{ url_for('guests.home') }}">
+            Nzube Ikoroha
+        </a>
+        <button class="navbar-toggler navbar-toggler-right text-white" type="button" data-toggle="collapse" 
+                data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span data-feather="grid"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#education">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--about section-->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row">
+                <!-- Flash message -->
+                <div class="col-md-8 mb-2  mx-auto text-center">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    {% if category== 'danger' %}
+                    <div class="alert alert-{{ category }}">
+                        &#8252; {{ message }} 
+                    </div>
+                    {% else %}
+                    <div class="alert alert-{{ category }}">
+                        &#9989;  {{ message }}  
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+                <div class="col-md-7 mx-auto text-center">
+
+                    <h2>About Me</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                    <p class="lead">
+                        Hello, I'm <b>Nzube Ikoroha</b>, a fullstack <b>Web Developer</b> based in <b>Owerri, Nigeria</b>.
+                        I love <b>making beautiful things</b> & solving problems.
+                    </p>
+                    <p class="text-muted">
+                        I am passionate about programming. I have worked on couple of open source projects, and also freelance projects for some clients from which I have gained valuable experience. 
+                        Bringing Clients imagination to life have always been my desire.
+                        </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto text-center">
+                    <a class="btn btn-primary" href="https://drive.google.com/file/d/1Bd_OnHGhasR0nMPFNiOST5TnMkVSXlMO/view?usp=sharing" target="blank">
+                        Download Resume
+                    </a>
+                    <a class="btn btn-outline-primary page-scroll" href="#contact">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--education section-->
+    <section class="py-5 bg-light" id="education">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mx-auto text-center">
+                    <h2>Education</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="text-muted font-weight-bold">2014 &mdash; 2018</span>
+                            <h5>BSc in Accounting</h5>
+                            <p class="text-muted small-xl">Madonna University</p>
+                            <p>My love for numbers led me to study Accounting. I graduated with First Class honours from the prestigious institution</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4  mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <span class="text-muted font-weight-bold">2021 &mdash; 2021</span>
+                            <h5>Fullstack Software Development</h5>
+                            <p class="text-muted small-xl">Moat Academy For Developers</p>
+                            <p>Under the training of experienced Senior Developers, I was adequately trained in fullstack software developement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--skills section-->
+    <section class="py-5" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mx-auto text-center">
+                    <h2>My Skills</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 px-5">
+                    <div class="skill">
+                        <div class="skill-name">HTML5 <span class="badge badge-primary float-right">90%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">CSS3 <span class="badge badge-primary float-right">85%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">MySQL <span class="badge badge-primary float-right">85%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">ReactJS <span class="badge badge-primary float-right">75%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-5">
+                    <div class="skill">
+                        <div class="skill-name">Python <span class="badge badge-primary float-right">90%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">Flask <span class="badge badge-primary float-right">85%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">JavaScript <span class="badge badge-primary float-right">80%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-name">WordPress <span class="badge badge-primary float-right">65%</span></div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--services section-->
+    <section class="py-5 bg-primary" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mx-auto text-center">
+                    <h2 class="text-white">My Services</h2>
+                    <div class="divider bg-white mx-auto"></div>
+                </div>
+            </div>
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <div class="icon-box-inner small text-primary">
+                                    <span data-feather="crop" width="30" height="30"></span>
+                                </div>
+                            </div>
+                            <h5 class="my-3">Web Design</h5>
+                            <p>Will handle your front end web design. This will help in digitization and boost your physical business.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <div class="icon-box-inner small text-primary">
+                                    <span data-feather="monitor" width="30" height="30"></span>
+                                </div>
+                            </div>
+                            <h5 class="my-3">Web Development</h5>
+                            <p>Will create a fully functional web application that will effectively engage your customers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <div class="icon-box-inner small text-primary">
+                                    <span data-feather="briefcase" width="30" height="30"></span>
+                                </div>
+                            </div>
+                            <h5 class="my-3">Branding</h5>
+                            <p>Will add recent modification to an already existing web app, which will present your products/services in the best light online.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <div class="icon-box-inner small text-primary">
+                                    <span data-feather="smartphone" width="30" height="30"></span>
+                                </div>
+                            </div>
+                            <h5 class="my-3">DataBase Modelling</h5>
+                            <p>Will use viable MySQL tools to restructure yout DataBase to a more structured, efficient and effective one.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <div class="icon-box-inner small text-primary">
+                                    <span data-feather="message-square" width="30" height="30"></span>
+                                </div>
+                            </div>
+                            <h5 class="my-3">Digital Marketing</h5>
+                            <p>Will run and  manage Ads that generate immediate, increased and recurrent sales using a mix of Google and Social Ads</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--portfolio section-->
+    <section class="py-5 portfolio" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto text-center">
+                    <h2>My Portfolio</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-10 mx-auto">
+                    <div class="slick-slider">
+                        <div class="card mr-3">
+                            <img class="card-img-top rounded" src="{{ url_for('static',filename='img/work-1.jpg') }}" alt="Work 1">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Logo Design for KJ</h5>
+                                <p class="card-text text-muted">Branding</p>
+                            </div>
+                        </div>
+                        <div class="card mr-3">
+                            <img class="card-img-top rounded" src="{{ url_for('static',filename='img/work-2.jpg') }}" alt="Work 2">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Website for Twitter</h5>
+                                <p class="card-text text-muted">Web Design</p>
+                            </div>
+                        </div>
+                        <div class="card mr-3">
+                            <img class="card-img-top rounded" src="{{ url_for('static',filename='img/work-3.jpg') }}" alt="Work 3">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Consulting for Google</h5>
+                                <p class="card-text text-muted">Consulting</p>
+                            </div>
+                        </div>
+                        <div class="card mr-3">
+                            <img class="card-img-top rounded" src="{{ url_for('static',filename='img/work-4.jpg') }}" alt="Work 4">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Mobile App for LinkedIn</h5>
+                                <p class="card-text text-muted">Mobile Apps</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--send email-->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h2 >Have a project for me?</h2>
+                    <div class="divider bg-primary mx-auto"></div>
+                    <p class="text-muted">
+                        I am available for freelance work. Let's get in touch.
+                    </p>
+                    <div class="mt-3">
+                        <form action="{{ url_for('guests.home') }}" method="post">
+                        {{ form.csrf_token() }}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                    {#
+                                    <input type="text" class="form-control" placeholder="Your name">
+                                    {{ form.email.label(class="form-control-label") }}
+                                    {% for field, errors in form.errors.items() %}
+                                        <small class="form-text text-muted ">
+                                            {{ ', '.join(errors) }}
+                                        </small>
+                                    {% endfor %}
+                                    -----
+                                    {% if form.name.errors %}
+                                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                        {% for error in form.name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.name(class="form-control form-control-lg") }}
+                                        {% endif %}
+                                    #}
+                                      {% if form.name.errors %}
+                                        {{ form.name(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                        {% for error in form.name.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.name(class="form-control form-control-lg myform") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {% if form.email.errors %}
+                                        {{ form.email(placeholder="Your email address", class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.email(class="form-control form-control-lg myform") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {% if form.summary.errors %}
+                                        {{ form.summary(placeholder="Your summary address", class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                        {% for error in form.summary.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                        </div>
+                                        {% else %}
+                                        {{ form.summary(class="form-control form-control-lg myform", rows="5") }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-3">
+                                {{ form.submit(class="btn btn-md btn-dark") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--scroll to top-->
+    <div class="scroll-top">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!--footer / contact-->
+    <footer class="py-6 bg-dark text-white" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="text-white">Nzube Ikoroha</h5>
+                    <div class="divider divider-sm bg-white mt-3"></div>
+                    <p class="mt-4">
+                        I completed more than 35 projects and all were received well. Would love to work on your project.
+                    </p>
+                    <ul class="list-inline social social-sm social-rounded mt-4">
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/mr_nzube" target="blank"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/nzube-ikoroha-28b9a918a/"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/soul47"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://api.whatsapp.com/send?phone=2348136731734" target="blank"><i class="fa fa-whatsapp"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 ml-auto">
+                    <h5 class="text-white">Contact Information</h5>
+                    <div class="divider divider-sm bg-white mt-3"></div>
+                    <ul class="list-unstyled mt-4">
+                        <li class=" mb-2">
+                            <span class="mr-2" data-feather="phone" width="20" height="20"></span>
+                            <a href='tel:+2348136731734' class='phone'>+234 813 673 1734 </a>
+                        </li>
+                        <li class=" mb-2">
+                            <span class="mr-2" data-feather="mail" width="20" height="20"></span>
+                            <a href = "mailto: contact@nzubeikoroha.com" class='phone'>contact@nzubeikoroha.com</a>
+                        </li>
+                        <li class=" mb-2">
+                            <span class="mr-2" data-feather="map-pin" width="20" height="20"></span>
+                            Owerri, Imo State.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-5"/>
+            <div class="row">
+                <div class="col-12 text-muted text-center mx-auto">
+                    &copy; 2021 <a href='https://soul47.com/'>Soul47</a> - All Rights Reserved {{ today }}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.5.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Typist/1.2/typist.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

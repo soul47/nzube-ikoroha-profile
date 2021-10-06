@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript Day1 Review</title>
+
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nzube Ikoroha | Web Developer | Work</title>
+    <meta name="keywords" content="software developer in lagos state, software developer in imo state, software developer in enugu state, software developer in abia state, Nzube Ikoroha, python developer in lagos, python developer, flask developer, fullstack developer in Nigeria, javascript , html5, css3, jquery, reactjs, mysql, front-end developer in lagos, back-end developer, website designer, website design in lagos, web development" >
+    <meta name="description" content="Nzube Ikoroha is a professional web developer who use technology to solve real-world problems to meet client needs" >
+    <meta name="Author" content="Nzube Ikoroha" > 
+
+    <!--Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Inconsolata:400,700">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    {#
+    {{ url_for('static', filename='') }}
+    style="background-image: url(img/parallex.jpg)"
+    #}
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/default.css') }}" id="theme-color">
+</head>
+<body>
+<div class='container'>
+<div class='row'>
+<div class='col-md-6 offset-3'>
+<div><a id='logo' href="{{ url_for('guests.home') }}"><i class="fas fa-wallet"></i> &eacute;g&#333;Fin</a></div>
+<div class="sign_up_div col-md-12 mt-4">
+<h4 style='text-align:center' class='mt-4'>LOGIN</h4>
+<div class="col-md-8 offset-2">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	{% for category, message in messages %}
+	<div class="alert alert-{{ category }}">
+	{{ message }}
+	</div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+</div>
+<form method="POST" action="">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{ form.csrf_token() }}
+            <label for=""> {{ form.username.label }}</label>
+            {{ form.username }}
+            {% for field, errors in form.errors.items() %}
+                <small class="form-text text-muted ">
+                    {{ ', '.join(errors) }}
+                </small>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary")}}
+        </div>
+    </div>
+</form>
+
+</div>
+
+<br><br>
+<p class='alt_login'>Don't have an  &eacute;g&#333;Fin account?<a href="#"> Sign up</a></p>
+</div>
+</div>
+<a class='support' href="#"><i class="far fa-question-circle"></i> SUPPORT</a>
+
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.5.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Typist/1.2/typist.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<script type="text/javascript" language="Javascript">
+
+
+	
+</script>
+</body>
+</html>
